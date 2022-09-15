@@ -13,16 +13,18 @@ All Rights Reserved
 Based on Python's difflib.HtmlDiff,
 with changes to provide console output instead of html output.  """
 
+import codecs
+import unicodedata
+import filecmp
+import re
+from optparse import Option, OptionParser
 import os
 import stat
 import sys
 import errno
+from cydifflib import SequenceMatcher
 import difflib
-from optparse import Option, OptionParser
-import re
-import filecmp
-import unicodedata
-import codecs
+difflib.SequenceMatcher = SequenceMatcher
 
 __version__ = "2.0.5"
 
